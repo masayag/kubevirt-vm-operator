@@ -1,0 +1,13 @@
+apiVersion: guest.kubevirt.io/v1alpha1
+kind: Fedora
+metadata:
+  name: example-fedora
+  namespace: default
+spec:
+  osVersion: "29"
+  vmName: "test-vm"
+  memory: "512Mi"
+  cpuCores: 1
+  cloudInit: |
+    #!/bin/bash
+    echo "fedora" | passwd fedora --stdin
